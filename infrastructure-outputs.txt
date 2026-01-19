@@ -1,0 +1,6 @@
+ansible_server_private_ip = "10.0.0.135"
+ecr_repository_url = "956026717797.dkr.ecr.ap-southeast-1.amazonaws.com/devops-bootcamp/final-project-nazirulhafiz"
+monitoring_server_private_ip = "10.0.0.136"
+vpc_id = "vpc-0dc15567ee2bf7df6"
+web_server_private_ip = "10.0.0.5"
+web_server_public_ip = "52.76.105.130"

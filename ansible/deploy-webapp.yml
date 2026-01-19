@@ -1,0 +1,16 @@
+---
+- name: Deploy Web Application
+  hosts: web
+  become: yes
+  tasks:
+    - name: Log in to ECR
+      shell: aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 956026717797.dkr.ecr.ap-southeast-1.amazonaws.com
+
+    - name: Pull and run webapp container
+      docker_container:
+        name: webapp
+        image: 956026717797.dkr.ecr.ap-southeast-1.amazonaws.com/devops-bootcamp/final-project-nazirulhafiz:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "80:80"
